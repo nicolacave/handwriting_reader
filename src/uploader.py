@@ -3,8 +3,8 @@ import os
  
 def upload_files(path):
     session = boto3.Session(
-        aws_access_key_id='AKIA3IXH2WVCGBCFTX5E',
-        aws_secret_access_key='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',
+        aws_access_key_id='',
+        aws_secret_access_key='',
         region_name='us-west'
     )
     s3 = session.resource('s3')
