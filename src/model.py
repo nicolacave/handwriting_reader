@@ -19,7 +19,7 @@ class DecoderType:
 
 
 class Model:
-    """Minimalistic TF model for HTR."""
+    """Minimalistic TF model"""
 
     def __init__(self,
                  char_list: List[str],

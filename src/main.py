@@ -182,7 +182,14 @@ def main():
     elif args.mode == 'infer':
         model = Model(list(open(FilePaths.fn_char_list).read()), decoder_type, must_restore=True, dump=args.dump)
         infer(model, args.img_file)
+def infer_by_web(path, option):
+    decoderType = DecoderType.BestPath
+    print(open(FilePaths.fnAccuracy).read())
+    model = Model(open(FilePaths.fnCharList).read(),
+                  decoderType, mustRestore=False)
+    recognized = infer(model, path)
 
+    return recognized
 
 if __name__ == '__main__':
     main()

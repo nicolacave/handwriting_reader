@@ -1,17 +1,18 @@
 import argparse
 import pickle
-
-import cv2
 import lmdb
+import cv2
+import create_lmdb
 from path import Path
 
+#data_dir = "/Users/nicolacave/dsi_galvanize/capstones/capstone3/SimpleHTR/data"
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_dir', type=Path, required=True)
 args = parser.parse_args()
 
 # 2GB is enough for IAM dataset
-assert not (args.data_dir / 'lmdb').exists()
-env = lmdb.open(str(args.data_dir / 'lmdb'), map_size=1024 * 1024 * 1024 * 2)
+# assert not (args.data_dir / 'lmdb').exists()
+env = lmdb.open(str(args .data_dir / 'lmdb'), map_size=1024 * 1024 * 1024 * 10)
 
 # go over all png files
 fn_imgs = list((args.data_dir / 'img').walkfiles('*.png'))
